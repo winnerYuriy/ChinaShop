@@ -1,0 +1,688 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+html {
+	width:100%;
+	height:100%;
+}
+
+body {
+	height: 100vh;
+    font-size: 12px;
+    background-image: url("../img/ep_naturalwhite.png");
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; 
+    margin: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.603);
+}
+
+
+header .logo:hover{
+    transform: scale(1.1);
+
+}
+
+.logo-container {
+    width: 200px;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: .4s;
+}
+
+header nav ul li {
+    position: relative;
+    float: left;
+    color: #333;
+    font-size: 14px;
+    transition: .4s;
+}
+
+header nav ul li:hover {
+    transform: scale(1.1);
+}
+
+header nav ul li a {
+   padding: 15px;
+   color: #333;
+   display: block;
+   transition: .4s;
+   text-decoration: none;
+   font-size: 12px;
+   font-weight: bold;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   border-radius: 5px;
+}
+
+header nav ul li a:hover {
+    background: #dbdbdb;
+    text-decoration: none;
+}
+
+nav ul li ul {
+    position: absolute;
+    left: 0;
+    width: 150px;
+    background: #fff;
+    display: none;
+    transition: .4s;
+    border-radius: 5px;
+}
+
+nav ul li ul li {
+    width: 100%;
+    border: 1px solid #5c5b5b;
+    border-radius: 5px;
+}
+
+nav ul li ul li ul {
+    left: 150px;
+    top: 0;
+}
+
+nav ul li:hover > ul {
+    display: initial;
+}
+
+
+.submenu {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.with-submenu:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.header_content {
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #f2fff7;
+    z-index: 100;
+}
+
+.contact-info-wrapper {
+    width: 1310px;/*фиксируем ширину обертки*/ 
+    margin: 0 auto;/*центрируем ее*/ 
+    background: darkgray; 
+    height: 50px;/*Задаем высоту обертки*/
+    display: flex;
+    flex-direction: column;
+    margin-right: 2px; /* Додати відступи між контактними елементами */
+    margin-left: 2px;
+}
+
+
+.phone, .email, .working-hours {
+    float: left; /*Задаем обтекание*/ 
+    line-height: 50px;/*Высота строки + верт. центрирования текста*/ 
+    font-size:12px; 
+    background: dodgerblue; 
+    color: white; 
+    width: 520px; /*Фиксируем ширину блока*/ 
+    margin-right: 10px; 
+    text-align: center; /*Центрируем текст по горизонтали*/ 
+}
+
+
+
+.contact-info {
+    display: flex;
+}
+
+.contact-item {
+    margin-right: 20px; /* Додати відступи між контактними елементами */
+}
+
+.header_content_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header_catalog_btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header_search {
+    flex: 1;
+}
+
+.header_search_input {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info p {
+    margin: 5px 0; /* Додати відступи між контактними елементами */
+}
+
+/* Основні стилі для головного меню */
+
+
+.carousel.slide {
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.carousel-inner {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    position:absolute ;
+    background-color: #f2fff7;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.carousel-item { 
+    display: flex;
+    width: 756px;
+    height:402px;
+    background-color: #f2fff7;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+   
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between; /* Рівномірно розміщує блоки по ширині */
+    align-items: center; /* Вирівнює блоки по вертикалі по центру */
+}
+
+.section-top {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 2px;
+    margin-bottom: 5px;
+    background-color: #f2fff7;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    font-size: large;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.container-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:left;
+    flex-direction: row;
+    margin-top: 10px;    
+    margin-left: 10px;
+    margin-right: 2px;
+    margin-bottom: 5px;
+    gap: 2px;
+}
+
+.product-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-top: 60px;
+    margin-left: 10px;
+    margin-right: 2px;
+    margin-bottom: 5px;
+    gap: 2px;
+}
+
+.product-card {
+    position: relative;
+    width: calc(22% - 20px); /* Ширина карточки з врахуванням відступу */
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-card {
+    position: absolute;
+    bottom: 5px;
+    left: 20%;
+    background-color: #13a50e;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    border: none;
+    padding: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.3s 200ms;
+    width:10em;
+    margin-left: 1em; /* або інша відстань, яку ви хочете використати */
+    font-weight: bold;
+    z-index: 1;
+}
+
+.btn-card :hover {
+    background-color: #a8b30c;
+    color: #850f0f;
+    transition: all 0.3s ease;
+    width:10em;
+    margin-left: 1em; /* або інша відстань, яку ви хочете використати */
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: auto; /* Розташовує ціну внизу контейнера, залишаючи інші елементи наверху */
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1em; /* або інша відстань, яку ви хочете використати */
+    margin-bottom: 10px;
+    margin-top: auto; /* Розташовує ціну внизу контейнера, залишаючи інші елементи наверху */
+    color: red;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    left: 20%;
+}
+
+.price-thousands {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1em; /* або інша відстань, яку ви хочете використати */
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: auto; /* Розташовує ціну внизу контейнера, залишаючи інші елементи наверху */
+    color: red;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.hrn{
+    
+    align-items: left;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-top: auto; /* Розташовує ціну внизу контейнера, залишаючи інші елементи наверху */
+    color: red;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+
+}
+
+.product-card .price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: auto; /* Розташовує ціну внизу контейнера, залишаючи інші елементи наверху */
+    color: red;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.product-card .name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.product-card .description {
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.product-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+    
+
+.no-products {
+    margin-left: 30%;
+    margin-bottom: 10px;
+    justify-content: center;
+    height: 100%;
+    color: #ff0000;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.brands-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-top: 60px;
+    margin-left: 5px;
+    margin-right: 2px;
+    margin-bottom: 1px;
+    padding: 1px;
+    gap: 2px;}
+
+.brand-card {
+    position: relative;
+    width: calc(15% - 10px); /* Ширина карточки з врахуванням відступу */
+    margin-bottom: 2px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 1px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2 5 2px;
+}
+
+.brand-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.brand-card img {
+    width: 80%;
+    max-height: 80px;
+    object-fit: contain;
+    margin-bottom: 5px;
+    cover
+}
+
+.brand-name {
+    position: absolute;
+    bottom: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: -20px;
+    margin-top: auto; /* Розташовує ціну внизу контейнера, залишаючи інші елементи наверху */
+    color: #0c0c0c;
+    font-family: 'courier', sans-serif;
+    letter-spacing: 1px;
+   
+}
+
+
+.footer_area {
+    background-color: #1a1a1a; /* Темний колір футера, наприклад, чорний або темно-сірий */
+    color: #ffffff; /* Колір тексту у футері */
+    padding: 50px 0; /* Відступи від верху та низу футера */
+}
+
+.footer_menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer_menu li {
+    display: inline-block;
+    margin-right: 20px; /* Відступ між елементами меню */
+}
+
+.footer_menu a {
+    color: #ffffff; /* Колір посилань */
+    text-decoration: none;
+    font-size: 14px; /* Розмір шрифту для посилань */
+}
+
+.copywrite {
+    font-size: 12px; /* Розмір шрифту для копірайту */
+    margin-top: 20px; /* Відступ від верху копірайту */
+}
+
+
+.product-card {
+    position: relative;
+
+}
+
+.promotion-label.actions {
+    position: absolute;
+    top: 0;
+    right: -50;
+    background-color: #ff0000; /* Колір фону напису-картинки */
+    color: #ffffff; /* Колір тексту напису-картинки */
+    padding: 5px; /* Відступи внутрішнього простору напису-картинки */
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.promotion-label.bestseller {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #b9213b; /* Колір фону напису-картинки */
+    color: #ffffff; /* Колір тексту напису-картинки */
+    padding: 5px; /* Відступи внутрішнього простору напису-картинки */
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.promotion-label.new {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #13a50e; /* Колір фону напису-картинки */
+    color: #ffffff; /* Колір тексту напису-картинки */
+    padding: 5px; /* Відступи внутрішнього простору напису-картинки */
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #333333;
+}
+
+.repair-article-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #333333;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align:justify;
+}
+
+.repair-article-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.section-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #333333;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.product-details-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Висота екрану */
+  }
+  
+  .product-details-header {
+    padding-left: 15px;
+    flex: 0 0 50px;
+    width: 100%;
+    background-color: #ffffff;
+    margin-top: 60px;
+    font: 1em sans-serif;
+  }
+  
+  .product-image {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    width: 50%;
+    height: 100%;
+    margin-right: 20px;
+  }
+
+  .product-image img {
+    width: 500px;
+    height: 450px;
+    object-fit: contain; /* Масштабування, щоб уникнути обрізання */
+    
+  }
+  
+  .product-info {
+    display: flex;
+    flex-grow: 1; /* Займати доступний простір рівномірно */
+    width: 50%;
+    background-color: #ffffff; /* Колір може бути змінений на ваш смак */
+    margin-left: 20px;
+    flex-direction: row;
+  }
+  
+  .product-features {
+    display: flex;
+    margin-top: 20px;
+
+  }

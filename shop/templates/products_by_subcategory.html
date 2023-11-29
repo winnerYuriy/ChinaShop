@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="product-card-container">
+        {% for product in products %}
+            <div class="product-card">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" width=250 align='center'>
+                <p class="name">{{ product.name }} </p>
+            <!--   <p class="description">{{ product.description }}</p>  --> 
+            <p class="price-container">
+                <span class="price-thousands">{{ product.price|floatformat:0 }}  </span> <span class="hrn">грн.</span>
+            </p>
+                <!-- Додайте інші необхідні поля товару та стилі за вашим бажанням -->
+            </div>
+            {% if products|length == 0 %}
+                <div class="no-products">
+                     <!-- Ваш HTML-код для вільного місця, наприклад, повідомлення про відсутність товарів -->
+                 </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+
+
+            <a href="{% url 'index' %}" button type="button" class="btn btn-primary">
+              <i class="bi bi-cloud-upload-fill"></i> На головну
+              </button></a>
+{% endblock %}

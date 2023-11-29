@@ -1,0 +1,18 @@
+<!-- search_results.html -->
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<!-- search_results.html -->
+
+{% if products %}
+    <h2>Результати пошуку:</h2>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Нічого не знайдено.</p>
+{% endif %}
+
+
+{% endblock content %}

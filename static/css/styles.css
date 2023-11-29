@@ -1,0 +1,59 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* світло-сірий фон */
+    margin: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #15dd15; /* синій колір */
+}
+
+a:hover {
+    color: rgb(32, 158, 63); /* змінюємо колір при наведенні миші */
+}
+
+/* Додайте більше стилів за необхідністю */
+.price {
+    font-weight: bold;
+    font-size: 32px;
+    color: rgb(224, 18, 63);
+}
+
+.product-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .product-image {
+    margin-right: 40px; /* або інший відступ за бажанням */
+  }
+
+  .product-details {
+    flex-grow: 1;
+  }
+
+  .btn-add-green {
+    background: #0ab02a;
+    border: none;
+    border-bottom: 3px solid #068d20;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 43px;
+    line-height: 41px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}

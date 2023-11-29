@@ -1,0 +1,80 @@
+.header__top {
+    background: #232f3e;
+    color: #fff;
+    padding: 2px 0;
+}
+.flex-column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  background-color: #232f3e;
+  height: 54px;
+  width: 100%;
+  padding: 10px; /* додатковий відступ всередині контейнера, якщо потрібно */
+}
+
+.f_row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header__menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu_group__list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu_group__item {
+  margin-right: 15px; /* розмір відступу між пунктами меню */
+}
+
+.category-container {
+  margin-top: 20px; /* розмір відступу між каруселлю і текстом категорій */
+}
+
+/* Стилі для випадаючого списку */
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: #232f3e;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.menu_group__item:hover .submenu {
+  display: block;
+}
+
+.submenu-item {
+  padding: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+}
+
+.submenu-item:hover {
+  background-color: #44566c;
+}

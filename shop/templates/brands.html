@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="brands-container">
+    {% for brand in brands %}
+        <a class="brand-card" href="{% url 'products_by_brand' brand_slug=brand.slug %}">
+            {% if brand.image and brand.image.url %}
+                <img src="{{ brand.image.url }}" alt="{{ brand.name }}">
+            {% else %}
+                <p>Зображення відсутнє</p>
+                <div class="brand-name">
+                    <p>{{ brand.name }}</p>
+                </div>
+            {% endif %}
+            
+                
+            
+        </a>
+    {% endfor %}
+</div>
+
+     <a href="{% url 'index' %}" button type="button" class="btn btn-primary">
+            <i class="bi bi-cloud-upload-fill"></i> На головну
+            </button></a>
+
+{% endblock content %}

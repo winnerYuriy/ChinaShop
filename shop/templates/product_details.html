@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="product-details-container">
+    <div class="product-details-header">
+        <h2>{{ product.name }}</h2>
+    </div>
+    <div class="product-image">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" width="500" height="500">
+    </div>
+    <div class="product-info">
+         <p> </p>
+        <p>{{ product.description }}</p>
+    </div>
+   
+    <div class="product-features">
+      <h2>Характеристики товару:</h2>
+      <ul>
+        <li>Характеристика 1: {{ product.feature1 }}</li>
+        <li>Характеристика 2: {{ product.feature2 }}</li>
+        <!-- Додайте інші характеристики за потребою -->
+      </ul>
+    </div>
+</div>
+{% endblock content %}

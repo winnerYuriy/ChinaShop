@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="section-top"> </div>
+<div class="container-card">
+    {% for product in products %}
+        <!--<a class="detail-product-link" href="{% url 'product_details' product.slug %}"> -->
+            <div class="product-card">
+                
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" width=250 align='center'>
+                    {% if product.status_id == 2 %}
+                        <div class="promotion-label actions">АКЦІЯ</div>
+                    {% elif product.status_id == 3 %}
+                        <div class="promotion-label bestseller">Топ продаж</div>
+                    {% elif product.status_id == 1 %}
+                        <div class="promotion-label new">Новинка</div>
+                    {% endif %}
+              
+                <div class="product-details">
+                    <p class="name">{{ product.name }}</p>
+                    <p class="price-container">
+                        <span class="price-thousands">{{ product.price|floatformat:0 }}  </span> <span class="hrn">грн.</span>
+                    </p>
+                    <button type="button" class="btn-card">Купити
+                    </button>
+                </div>
+            </div>
+      <!--  </a> -->
+    {% endfor %}
+    
+    {% if products|length == 0 %}
+        <div class="no-products">
+            <!-- Ваш HTML-код для вільного місця, наприклад, повідомлення про відсутність товарів -->
+        </div>
+    {% endif %}
+</div>
+
+<a href="{% url 'index' %}" button type="button" class="btn btn-primary">
+    <i class="bi bi-cloud-upload-fill"></i> На головну
+</button></a>
+
+   
+{% endblock content %}
